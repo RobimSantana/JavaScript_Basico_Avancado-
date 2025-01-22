@@ -1,5 +1,5 @@
 /*
-    2) O IMC - Indice de Mass corporal é um cirterio da Organização Mundial de Saúde para dar uma indicação sobre a condição de peso de uma pessoa adulta.
+    3) O IMC - Indice de Mass corporal é um cirterio da Organização Mundial de Saúde para dar uma indicação sobre a condição de peso de uma pessoa adulta.
 
     Formula do IMC:
     IMC = peso / (altura * altura)

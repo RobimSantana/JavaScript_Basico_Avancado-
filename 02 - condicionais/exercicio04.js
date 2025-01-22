@@ -1,5 +1,5 @@
 /*
-    3) Elabore um algoritmo que calcule o que deve ser pago por um produto, considerando o preço normal de etiqueta e a escolha da condição de pagamento.
+    4) Elabore um algoritmo que calcule o que deve ser pago por um produto, considerando o preço normal de etiqueta e a escolha da condição de pagamento.
     Utilize os códigos da tabela a seguir para ler qual a condição de pagamento escolhido e efetue o cálculo adequado.
 
     Código Condição de pagamento:
@@ -10,51 +10,51 @@
 */
 
 
-const valorEtiqueta = 5000;
+const valorEtiqueta = 100;
 
+// Códigos das condições de pagamento
+const CONDICAO_DEBITO = 1;
+const CONDICAO_DINHEIRO_PIX = 2;
+const CONDICAO_DUAS_VEZES = 3;
+const CONDICAO_MAIS_DE_DUAS_VEZES = 4;
 
-const debito = 10;
-const calc_debito = (valorEtiqueta * debito) / 100;
-const descontoDebito = valorEtiqueta - calc_debito
- 
-const dinheiro_pix = 15;
-const calc_dinheiro_pix = (valorEtiqueta * dinheiro_pix) / 100;
-const desconto_dinheiro_pix = valorEtiqueta - calc_dinheiro_pix
+let condicaoPagamento = 4; // altere aqui conforme necessário
 
+if (condicaoPagamento === 1) {
+    const descontoDebito = (valorEtiqueta -(valorEtiqueta * 0.10));
+    
+    console.log('O valor do produto é de R$',valorEtiqueta)
+    console.log('A condição de pagamento escolhida foi Débito');
+    console.log('Valor do desconto é:', descontoDebito,'%');
+    console.log('Valor final do produto agora é:', precoFinalDebito);
 
-const Pagamento_duas_x = 2;
-const calc_sem_juros = valorEtiqueta / Pagamento_duas_x;
-const sem_juros = valorEtiqueta
+} else if (condicaoPagamento === 2) {
+    const descontoDinheiroPix = (valorEtiqueta -(valorEtiqueta * 0.15));
+   
+    console.log('O valor do produto é de R$',valorEtiqueta)
+    console.log('A condição de pagamento escolhida foi Dinheiro ou Pix');
+    console.log('Valor do desconto é:', descontoDinheiroPix,'%');
+    console.log('Valor final do produto agora é:', precoFinalDinheiroPix);
 
+} else if (condicaoPagamento === 3) {
+    // Sem juros
+    const semJurosTotal = valorEtiqueta;
+    // Não há descontos nem aumentos em duas vezes
+    console.log('O valor do produto é de R$',valorEtiqueta)
+    console.log('A condição de pagamento escolhida foi Pagamento em 2 x R$',valorEtiqueta / 2);
+    console.log('Valor total será:', semJurosTotal,'Sem juros');
 
-const Pagamento_mais_duas_x = 10;
-const calc_juros_mais_duas_x = valorEtiqueta + (Pagamento_mais_duas_x / 100);
-const juros_mais_duas_x = valorEtiqueta + calc_juros_mais_duas_x
-
-let condicaoPagamento = Pagamento_mais_duas_x;
-
-
-if (condicaoPagamento === debito) {
-    console.log('A condição de pagamento escolhido foi debito')
-    console.log('O valor do desconto é de', calc_sem_juros)
-    console.log('O valor do produto agora é de ',descontoDebito, )
-} 
-else if (condicaoPagamento === dinheiro_pix) {
-    console.log('A condição de pagamento escolhido foi Dinheiroo ou Pix')
-    console.log ('O valor do desconto é de', calc_dinheiro_pix);
-    console.log('O valor do produto agora é de ',desconto_dinheiro_pix)
+} else if (condicaoPagamento === 4) {
+    const jurosMaisDeDuassX = (valorEtiqueta * 0.10); // Juros sobre o preço normal
+    const totalComJuros = valorEtiqueta + jurosMaisDeDuassX; // Total com juros
+    console.log('O valor do produto é de R$',valorEtiqueta)
+    console.log('A condição de pagamento escolhida foi Pagamento acima de 2x');
+    console.log('Total dos juros será:', jurosMaisDeDuassX);
+    console.log('Valor total com os juros será', totalComJuros);
+} else {
+    console.error("Condição inválida");
 }
- else if (condicaoPagamento === Pagamento_duas_x) {
-    console.log('A condição de pagamento escolhido foi Pagamento 2x',calc_sem_juros)
-    console.log('O valor do produto ficará no valor de',sem_juros)
-} 
-else if (condicaoPagamento === Pagamento_mais_duas_x){
-    console.log('A condição de pagamento escolhido foi Pagamento mais 2x')
-    console.log('O valor do juros é de ', calc_juros_mais_duas_x)
-    console.log('O valor do produto agora é de ', juros_mais_duas_x)
-}else{
-    console.log('Valor invalido')
-}
+
 
 
 
