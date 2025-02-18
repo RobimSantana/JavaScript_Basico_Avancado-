@@ -32,3 +32,4 @@ console.log(variavel1)
 
 let variavel6 = 58 * 2; //Multiplicação
 console.log(variavel1)
+
